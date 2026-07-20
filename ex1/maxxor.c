@@ -1,0 +1,16 @@
+#include<stdio.h>
+int findMaximumXOR(int* nums, int numsSize){
+    if(numsSize < 2){
+        return 0;
+    }
+    int max_xor=0;
+    for(i=0;i< numsSize;i++){
+        for(j=0;j<numsSize;j++){
+            int current_xor=nums[i]^nums[j];
+            if(current_xor > max_xor){
+                max_xor = current_xor;
+            }
+        }
+    }
+    return max_xor;
+}
